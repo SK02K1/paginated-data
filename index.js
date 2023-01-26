@@ -5,6 +5,7 @@ const cors = require('cors');
 
 const { initDbConnection } = require('./db');
 const { routeNotFound, errorHandler } = require('./middlewares');
+const { albumRouter } = require('./routes');
 
 const app = express();
 const port = 8080;
@@ -19,6 +20,8 @@ app.use(
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+
+app.use('/albums', albumRouter);
 
 app.listen(port, () => {
   console.log('Server Started');
