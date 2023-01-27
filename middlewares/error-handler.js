@@ -1,9 +1,9 @@
 const errorHandler = (error, req, res, next) => {
-  console.err(error.stack);
+  console.error(error.stack);
   res.status(500).json({
     success: false,
-    message: "Some error occured",
-    errorMessage: error.message
+    message: 'Some error occured',
+    errorMessage: error.message,
   });
 };
 

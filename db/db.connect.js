@@ -13,7 +13,6 @@ const initDbConnection = async () => {
     );
     console.log(`DB successfully connected`);
   } catch (error) {
-    console.log({ PASSWORD });
     console.error(`MongoDB connection failed: ${error.message}`);
   }
 };
