@@ -20,11 +20,15 @@ const getAllAlbums = async (req, res, next) => {
         prev:
           page === '1'
             ? null
-            : `http://localhost:8080/albums/?page=${Number(page) - 1}`,
+            : `https://3toz8l.sse.codesandbox.io/albums/?page=${
+                Number(page) - 1
+              }`,
         next:
           Number(page) === pages
             ? null
-            : `http://localhost:8080/albums/?page=${Number(page) + 1}`,
+            : `https://3toz8l.sse.codesandbox.io/albums/?page=${
+                Number(page) + 1
+              }`,
       };
 
       return res.status(200).json({ info, albums });
